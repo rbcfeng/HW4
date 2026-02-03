@@ -15,7 +15,6 @@ public class Spawner : MonoBehaviour
     {
         
     }
-
     void SpawnPipe()
     {
         float Height = Random.Range(-4, 1);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pipe : MonoBehaviour
 {
      [SerializeField] private float _speed;
+     public GameObject _pipe;
     void Start()
     {
         
