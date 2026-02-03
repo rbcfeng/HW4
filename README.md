@@ -1,8 +1,8 @@
 # HW4
 ## Devlog
-Write your Devlog here!
+
+The model-view-control pattern is utilized in this project, since the view aspects include the UI, Audio, and Pipe classes, and the control aspects include the Spawner and Player classes. The UI class listens to the Player class and uses its _points variable to update the points text. The Audio class listens to the Player class when the player collides and triggers an object to play sound effects. The Pipe class listens to the Spawner class to see when the Instantiate() method is called so it can move left. To ensure the view and control aspects of my system are decoupled, I added events, which are Collided and Triggered defined in the Player class. I also used the singleton design pattern, which can be seen in the GameController class in lines 7 through 20. These lines of code identified a property as Instance, which is accessed publicly, but defined privately. There is a reference to the Player class, and the Awake() method ensures that there is only one Instance, and that duplicates are removed before other classes use it on their Start() and Update() methods. By using the singleton design pattern, any class can have a reference to the Player class without having to store it as a member variable. The Audio and UI classes subscribes to the events of Collided and Triggered defined in the Player class, so the Audio class can call the HitAudio() and CollectAudio() methods to produce sound effects, and the UI class can call UpdatePoints() and GameOver() when a collision happens without having to store Player as a member variable in their classes.
 
 ## Open-Source Assets
-If you added any other assets, list them here!
 - [Brackey's Platformer Bundle](https://brackeysgames.itch.io/brackeys-platformer-bundle) - sound effects
 - [2D pixel art seagull sprites](https://elthen.itch.io/2d-pixel-art-seagull-sprites) - seagull sprites
